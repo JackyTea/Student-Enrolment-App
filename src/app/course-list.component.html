@@ -1,0 +1,43 @@
+<div class="row">
+  <br />
+  <div id="add" class="col-md-3">
+    <span>List of available courses</span>&nbsp;&nbsp;&nbsp;
+  </div>
+  <div id="filters" class="col-md-9">
+    <a class="btn btn-info btn-lg" (click)="getCPA()">Get CPA Winter 2019 Courses</a>&nbsp;
+    <a class="btn btn-info btn-lg" (click)="getBSD()">Get BSD Winter 2019 Courses</a>&nbsp;
+    <a class="btn btn-warning btn-lg" (click)="ngOnInit()">Remove Filters</a>&nbsp;
+    <select>
+      <option selected disabled>Mongoose Database Identifiers</option>
+      <option *ngFor="let c of courses" value="">{{c._id}}</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <br />
+  <table class="table-responsive table-bordered table-hover">
+    <thead>
+      <tr>
+        <td class="col-md-1"><b> Academic Program</b></td>
+        <td class="col-md-1"><b> Course ID</b></td>
+        <td class="col-md-1"><b> Course Code</b></td>
+        <td class="col-md-1"><b> Section and Instance ID</b> </td>
+        <td class="col-md-1"><b> Currently Enrolled</b></td>
+        <td class="col-md-1"><b> Professor</b></td>
+        <td class="col-md-1"><b> Details</b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of courses">
+        <td class="col-md-1">{{ c.academicProgram }} </td>
+        <td class="col-md-1">{{ c.courseId }} </td>
+        <td class="col-md-1">{{ c.courseCode }} </td>
+        <td class="col-md-1">{{ c.section + ' - ' + c.termSectionId }} </td>
+        <td class="col-md-1">{{ c.enrolTotal }} / {{c.enrolCapacity}} </td>
+        <td class="col-md-1">{{ c.professor }} </td>
+        <td class="col-md-1"><a class="btn btn-default btn-sm" routerLink="/courselist/{{c.courseId}}"
+            routerLinkActive="active">Details</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

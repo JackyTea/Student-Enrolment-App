@@ -1,0 +1,16 @@
+#welcome {
+    text-align: justify;
+    text-justify: inter-word;
+    min-height: 350px;
+}
+
+#external {
+    text-align: justify;
+    text-justify: inter-word;
+    min-height: 350px;
+}
+
+.btn {
+    border-radius: 0%;
+}
+

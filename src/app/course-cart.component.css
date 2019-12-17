@@ -1,0 +1,17 @@
+.panel-body {
+    margin:0;
+    padding:0;
+}
+
+#possible-courses {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.btn {
+    border-radius: 0%;
+}
+
+#action-message {
+    font-size: 20px;
+}

@@ -1,0 +1,49 @@
+<div class="row">
+    <div id="top-info" class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div id="course-code" class="col-md-6">
+                    <h3><b>{{course.courseCode}} Details</b></h3>
+                </div>
+                <div id="course-code" class="col-md-6">
+                    <h3><b>Course ID: {{course.courseId}}</b></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="course-info" class="col-md-5">
+        <h4><b>Course General Information</b></h4>
+        <hr />
+        <ul>
+            <li><b>Course Code:</b> {{course.courseCode}}</li>
+            <li><b>Academic Program:</b> {{course.academicProgram}}</li>
+            <li><b>Course Level:</b> {{course.level}}</li>
+            <li><b>Course Section:</b> {{course.section}}</li>
+            <li><b>Course Term:</b> {{course.term}}</li>
+            <li><b>Room:</b> {{course.room}}</li>
+            <li><b>Currently Enrolled:</b> {{course.enrolTotal}} / {{course.enrolCapacity}}</li>
+            <li><b>Enrolment Capacity:</b> {{course.enrolCapacity}}</li>
+            <li><b>Taught By:</b> {{course.professor}}</li>
+        </ul>
+    </div>
+    <div id="course-info" class="col-md-5">
+        <h4><b>Course Times & Dates</b></h4>
+        <hr />
+        <ul>
+            <li><b>Start Date:</b> {{course.dateStart | date}}</li>
+            <li><b>End Date:</b> {{course.dateEnd | date}}</li>
+            <li><b>Class Start Time:</b> {{course.classStart}}</li>
+            <li><b>Class End Time:</b> {{course.classEnd}}</li>
+            <li><b>Monday Classes:</b> {{course.classMon}}</li>
+            <li><b>Tuesday Classes:</b> {{course.classTue}}</li>
+            <li><b>Wednesday Classes:</b> {{course.classWed}}</li>
+            <li><b>Thursday Classes:</b> {{course.classThu}}</li>
+            <li><b>Friday Classes:</b> {{course.classFri}}</li>
+        </ul>
+    </div>
+    <div id="list" class="col-md-2">
+        <h4><b>Back To List</b></h4>
+        <p>Return to fetched list of courses.</p>
+        <a class="btn btn-success" routerLink="/courselist" routerLinkActive="active">Back To List</a>&nbsp;
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="row">
+  <br/>
+  <div id="add" class="col-md-5"> 
+      <span>List of students</span>&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-success btn-lg" routerLink="/post" routerLinkActive="active">Add New
+      Student+</a>
+  </div>
+  <div id="filters" class="col-md-7">
+    <a class="btn btn-info btn-lg" (click)="getCPA()">Get CPA Students</a>&nbsp;
+    <a class="btn btn-info btn-lg" (click)="getBSD()">Get BSD Students</a>&nbsp;
+    <a class="btn btn-warning btn-lg" (click)="ngOnInit()">Remove Filters</a>&nbsp;
+    <select>
+      <option selected disabled>Mongoose Database Identifiers</option>
+      <option *ngFor="let s of students" value="">{{s._id}}</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <br />
+  <table class="table-responsive table-bordered table-hover">
+    <thead>
+      <tr>
+        <td class="col-md-1"><b> Student ID and Academic Program </b></td>
+        <td class="col-md-1"><b> Name </b></td>
+        <td class="col-md-2"><b> Birth Date</b> </td>
+        <td class="col-md-1"><b> Email </b></td>
+        <td class="col-md-1"><b> Academic Level </b></td>
+        <td class="col-md-1"><b> GPA </b></td>
+        <td class="col-md-1"><b> Course History</b></td>
+        <td class="col-md-1"><b> Coop Eligible</b></td>
+        <td class="col-md-3"><b> Manage Student</b></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td class="col-md-1"> {{ s.studentId + ' ' + s.academicProgram }} </td>
+        <td class="col-md-1">{{ s.familyName + ', ' + s.givenName}} </td>
+        <td class="col-md-2">{{ s.birthDate | date}} </td>
+        <td class="col-md-1">{{ s.email }} </td>
+        <td class="col-md-1">{{ s.academicLevel }} </td>
+        <td class="col-md-1">{{ s.gpa }} </td>
+        <td class="col-md-1">{{s.credits.length}} credits</td>
+        <td class="col-md-1"><b *ngIf="s.gpa >= 3" id="checkmark">✓</b></td>
+        <td class="col-md-3">
+          <a class="btn btn-default btn-sm" routerLink="/getall/{{s.studentId}}" routerLinkActive="active">Details</a>&nbsp;
+          <a class="btn btn-warning btn-sm" routerLink="/put/{{s.studentId}}" routerLinkActive="active">Edit</a>&nbsp;
+          <a class="btn btn-danger btn-sm" routerLink="/delete/{{s.studentId}}" routerLinkActive="active">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

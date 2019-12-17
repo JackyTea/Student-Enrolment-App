@@ -1,0 +1,30 @@
+.navbar {
+    margin: 0;
+    padding: 0;
+    background: rgb(252, 252, 252);
+}
+
+.navbar ul li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li a {
+    color: black;
+}
+
+.btn:hover {
+    background-color: rgb(65, 65, 65);
+    color: white;
+    padding: 10px;
+}
+
+.btn {
+    border-radius: 0%; 
+    background-color: rgb(243, 243, 243);
+}
+
+.active {
+    background: rgb(212, 212, 212);
+}

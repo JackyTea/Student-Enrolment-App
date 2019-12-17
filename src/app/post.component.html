@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Create New Student <span>[Featured Disabled]</span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <form (ngSubmit)='createStudent(f)' #f='ngForm'>
+
+      <div class="form-group">
+        <label class="control-label" for="studentId">Student ID:</label>
+        <input class="form-control" id="studentId" name="studentId" [(ngModel)]="newStudent.studentId" required
+          autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="givenName">First Name:</label>
+        <input class="form-control" id="givenName" name="givenName" [(ngModel)]="newStudent.givenName" required
+          autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="familyName">Last Name:</label>
+        <input class="form-control" id="familyName" name="familyName" [(ngModel)]="newStudent.familyName" required
+          autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="academicProgram">Academic Program:</label>
+        <input class="form-control" id="academicProgram" name="academicProgram" [(ngModel)]="newStudent.academicProgram"
+          required autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="birthDate">Birth Date:</label>
+        <input class="form-control" id="birthDate" name="birthDate" [(ngModel)]="newStudent.birthDate" required
+          autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="email">Email:</label>
+        <input class="form-control" id="email" name="email" [(ngModel)]="newStudent.email" required autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="academicLevel">Academic Level:</label>
+        <input class="form-control" id="academicLevel" name="academicLevel" [(ngModel)]="newStudent.academicLevel"
+          required autofocus>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="gpa">Grade Point Average:</label>
+        <input class="form-control" id="gpa" name="gpa" [(ngModel)]="newStudent.gpa" required autofocus>
+      </div>
+
+      <button class="btn btn-success" disabled type="submit">Save</button>&nbsp;
+      <a routerLink="/getall" class="btn btn-warning">Back to List of Students</a>
+
+    </form>
+    <p>&nbsp;</p>
+
+  </div>
+  <div class="col-md-4">
+    <h4>Your changes:</h4>
+    <p class="lead"><code>ID: {{ newStudent.studentId | json }}</code></p>
+    <p class="lead"><code>First Name: {{ newStudent.givenName | json }}</code></p>
+    <p class="lead"><code>Last Name: {{ newStudent.familyName | json }}</code></p>
+    <p class="lead"><code>Academic Program: {{ newStudent.academicProgram | json }}</code></p>
+    <p class="lead"><code>Birth Date: {{ newStudent.birthDate | json }}</code></p>
+    <p class="lead"><code>Email: {{ newStudent.email | json }}</code></p>
+    <p class="lead"><code>Academic Level: {{ newStudent.academicLevel | json }}</code></p>
+    <p class="lead"><code>Grade Point Average: {{ newStudent.gpa | json }}</code></p>
+  </div>
+</div>

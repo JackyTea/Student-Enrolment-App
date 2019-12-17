@@ -1,0 +1,49 @@
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background: rgb(236, 236, 236);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+td {
+    font-size: 12px;
+    vertical-align: top;
+}
+
+table {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    font-size: 12px;
+}
+
+#filters {
+    text-align: center;
+}
+
+#add {
+    text-align: center;
+}
+
+span {
+    position: relative;
+    font-size: 20px;
+}
+
+#checkmark {
+    font-size: 15px;
+    color: green;
+}
+
+.btn {
+    border-radius: 0%;
+}

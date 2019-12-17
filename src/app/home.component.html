@@ -1,0 +1,24 @@
+<div class="row">
+  <div id="welcome" class="col-md-6">
+      <h3><b>Student Enrolment App</b></h3>
+      <p>This assignment is meant to apply knowledge of Angular routing, HTML form patterns, database interaction and the fundamentals of Angular Component based web development.</p>
+      <hr />
+      <h3><b>List of Students</b></h3>
+      <p>Rendered list of students from web service.</p>
+      <a class="btn btn-info" routerLink="/getall" routerLinkActive="active">List of Students</a>
+      <hr />
+      <h3><b>Login</b></h3>
+      <p>Feature currently unavailable . . .</p>
+      <a class="btn btn-info" disabled routerLink="" routerLinkActive="active">Login</a>
+  </div>
+  <div id="external" class="col-md-6">
+    <h3><b>Web Service</b></h3>
+    <p>A Heroku hosted Node Express web API designed to fetch student data via Mongoose.js library methods.
+      All of the data is stored in a MongoDB cloud cluster and is retrieved in JSON format for ease of parsing. There are methods to pass GET, POST, PUT and DELETE requests   to the database for user manipulation of the data.</p>
+    <a class="btn btn-success btn-lg" href="https://fast-caverns-15998.herokuapp.com/">Web Service</a><br />
+    <hr />
+    <h3><b>Web Application</b></h3>
+    <p>A Heroku hosted Angular web application designed to render and manipulate fetch API data through a user-friendly interface. Applies the concept of HTML form patterns through CRUD (create, read, update, delete) handling of database data.</p>
+    <a class="btn btn-danger btn-lg" href="https://quiet-cliffs-46230.herokuapp.com/">Web Application</a>
+  </div>
+</div>

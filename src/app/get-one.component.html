@@ -1,0 +1,133 @@
+<div class="row">
+    <div id="main-info" class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div id="identifier" class="col-md-6">
+                    <h3><b>{{student.givenName + ' ' + student.familyName}}'s Student Info</b></h3>
+                </div>
+                <div id="identifier2" class="col-md-6">
+                    <h3><b>Student ID:</b> {{student.studentId}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="details" class="col-md-10">
+        <ul>
+            <li><b>Student ID:</b> {{student.studentId}}</li>
+            <li><b>Student Name:</b> {{student.givenName}}, {{student.familyName}}</li>
+            <li><b>Academic Program:</b> {{student.academicProgram}}, Level {{student.academicLevel}}</li>
+            <li><b>Grade Point Average:</b> {{student.gpa}}</li>
+        </ul>
+        <hr />
+        <div class="col-md-3">
+            <h4><b>Tentative Courses</b></h4>
+        </div>
+        <div class="col-md-7">
+            <table class="table-responsive table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td class="col-md-2"><b>Term</b></td>
+                        <td class="col-md-2"><b>Course</b></td>
+                        <td class="col-md-3"><b>Date & Time</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of student.coursesSaved">
+                        <td class="col-md-2">{{s.term}}</td>
+                        <td class="col-md-2">{{s.courseCode + ' - ' + s.section}}</td>
+                        <td class="col-md-3">
+                            <span *ngIf="s.classMon == 'Y'">Monday</span>
+                            <span *ngIf="s.classTue == 'Y'">Tuesday</span>
+                            <span *ngIf="s.classWed == 'Y'">Wednesday</span>
+                            <span *ngIf="s.classThu == 'Y'">Thursday</span>
+                            <span *ngIf="s.classFri == 'Y'">Friday</span><br>
+                            {{ s.classStart }} -
+                            {{ s.classEnd }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr />
+        <div class="col-md-3">
+            <h4><b>Confirmed Courses</b></h4>
+        </div>
+        <div class="col-md-7">
+            <table class="table-responsive table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td class="col-md-2"><b>Term</b></td>
+                        <td class="col-md-2"><b>Course</b></td>
+                        <td class="col-md-3"><b>Date & Time</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-3"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr />
+        <div class="col-md-3">
+            <h4><b>Course History<br />({{student.credits.length}} credits)</b></h4>
+        </div>
+        <div class="col-md-7">
+            <table class="table-responsive table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td class="col-md-1"><b>Term</b></td>
+                        <td class="col-md-1"><b>Grade</b></td>
+                        <td class="col-md-1"><b>Course Code</b></td>
+                        <td class="col-md-5"><b>Course Name</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of student.credits">
+                        <td class="col-md-1">{{s.termCompleted}}</td>
+                        <td class="col-md-1">{{s.gradeEarned}}</td>
+                        <td class="col-md-1">{{s.courseCode}}</td>
+                        <td class="col-md-5">{{s.courseName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr />
+    </div>
+    <div id="manage" class="col-md-2">
+        <h4><b>Select Courses</b></h4>
+        <p>Select next semester courses for {{student.givenName + ' ' + student.familyName}}.</p>
+        <a class="btn btn-primary" routerLink="/cart" routerLinkActive="active">Select Courses</a>&nbsp;<br />
+        <br />
+        <br />
+        <h4><b>Back To List</b></h4>
+        <p>Return to fetched list of students.</p>
+        <a class="btn btn-success" routerLink="/getall" routerLinkActive="active">Back To List</a>&nbsp;<br />
+        <br />
+        <br />
+        <h4><b>Edit Student</b></h4>
+        <p>Edit {{student.givenName + ' ' + student.familyName}}'s info.</p>
+        <a class="btn btn-warning" routerLink="/put/{{student.studentId}}" routerLinkActive="active">Edit
+            Student</a>&nbsp;<br />
+        <br />
+        <br />
+        <h4><b>Delete Student</b></h4>
+        <p>Delete {{student.givenName + ' ' + student.familyName}}'s info.</p>
+        <a class="btn btn-danger" routerLink="/delete/{{student.studentId}}" routerLinkActive="active">Delete
+            Student</a>
+    </div>
+</div>

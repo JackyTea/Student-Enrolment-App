@@ -1,0 +1,41 @@
+<div class="row" *ngIf="student">
+    <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Delete Student: {{student.givenName + ' ' + student.familyName}} <span>[Feature disabled]</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="col-md-6">
+    <h2>{{student.givenName + ' ' + student.familyName}}'s Student Info: </h2>
+    <ul>
+      <li><b>Student ID:</b> {{student.studentId}}</li>
+      <li><b>First Name:</b>  {{student.givenName}}</li>
+      <li><b>Last Name:</b>  {{student.familyName}}</li>
+      <li><b>Birthdate:</b>  {{student.birthDate | date}}</li>
+      <li><b>Email:</b>  {{student.email}}</li>
+      <li><b>Program:</b>  {{student.academicProgram}}</li>
+      <li><b>Level:</b>  {{student.academicLevel}}</li>
+      <li><b>GPA:</b>  {{student.gpa}}</li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+  <div *ngIf="student">
+    <form (ngSubmit)='deleteStudent()' #f='ngForm'>
+      <h4><b>Delete {{student.givenName + ' ' + student.familyName}}</b></h4>
+      <p>Delete this student and all their info from the database. <span>WARNING: This action cannot be undone!</span></p>
+      <button class="btn btn-danger" disabled type="submit">Delete {{student.givenName + ' ' + student.familyName}}</button>&nbsp;<br/>
+      <br/>
+      <h4><b>Back to list of students.</b></h4>
+      <p>Return to list of students.</p>
+      <a routerLink="/getall" class="btn btn-success">Back to List of Students</a>
+    </form>
+    </div>
+  </div>
+
+  <div *ngIf="!student">
+    <p>Student with ID: {{studentId}} could not be found!</p>
+    <a routerLink="/getall" class="btn btn-warning">Back to List of Students</a>
+  </div>

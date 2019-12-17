@@ -1,0 +1,11 @@
+#notfound {
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    min-height: 400px;
+    top: 150px;
+}
+
+.btn {
+    border-radius: 0%;
+}
