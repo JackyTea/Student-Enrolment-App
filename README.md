@@ -9,6 +9,8 @@ two-way data binding to render a visual schedule builder for
 students to easily enrol in courses and see course conflicts as
 they build their timetable.
 
+Visit the site [here.](https://quiet-cliffs-46230.herokuapp.com/home "Student Enrolment App Homepage")
+
 
 ## Demonstration GIFs
 
